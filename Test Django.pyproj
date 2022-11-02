@@ -4,7 +4,7 @@
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <Name>Test Django</Name>
     <RootNamespace>Test Django</RootNamespace>
-    <InterpreterId>MSBuild|Virtual Server|$(MSBuildProjectFullPath)</InterpreterId>
+    <InterpreterId>MSBuild|env1|$(MSBuildProjectFullPath)</InterpreterId>
     <SuppressEnvironmentCreationPrompt>True</SuppressEnvironmentCreationPrompt>
     <TestFramework>Pytest</TestFramework>
   </PropertyGroup>
@@ -98,10 +98,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Interpreter Include="Virtual Server\">
-      <Id>Virtual Server</Id>
+    <Interpreter Include="env1\">
+      <Id>env1</Id>
       <Version>3.9</Version>
-      <Description>Virtual Server (Python 3.9)</Description>
+      <Description>env1 (Python 3.9 (64-bit))</Description>
       <InterpreterPath>Scripts\python.exe</InterpreterPath>
       <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
       <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
