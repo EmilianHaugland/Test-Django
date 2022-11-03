@@ -25,8 +25,12 @@ def contact(request):
         request,
         'app/contact.html',
         {
-            'title':'Contact',
-            'message':'Your contact page.',
+            'title':'Personer',
+            'message':'Kontaktpersoner',
+            'mailMK' : 'marikallevik@gmail.com',
+            'mailEH' : 'emilian.haugland05@gmail.com',
+            'telEH' : '400 52 933',
+            'telMK' : '944 35 459',
             'year':datetime.now().year,
         }
     )

@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<h2>{{ title }}.</h2>
+<h2>{{ title }}</h2>
 <h3>{{ message }}</h3>
 
 <address>
@@ -12,9 +12,17 @@
     +47 400 52 933
 </address>
 
-<address>
-    <strong>Kundeservice:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Markedsf&oslash;ring:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+
+<div class="row">
+    <div class="card" style="width: 28rem; background-color: lightgrey;">
+        <div class="card-body">
+            <h4 class="card-title">  <strong>Emilian Haugland</strong></h4>
+            <p class="card-text"><strong>Telefon:</strong> {{telEH}}</p>
+            <address>
+                <strong>Mail:</strong> <a href="mailto:emilian.haugland05@gmail.com">{{mailEH}}</a>
+            </address>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
