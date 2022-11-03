@@ -44,8 +44,8 @@ def about(request):
         {
             'title':'Om oss',
             'message':'Your application description page.',
-            'omoss' : 'Vi er et lag på to personer som jobber for at folk med interesse for spill skal ha en lettere mulighet for å finne spill på tilbud.',
-            'info' : 'Vi har valgt og lagge dette grunnet egen interesse men vil dele våres arbeid med folket'
+            'omoss' : 'Vi er et lag pÃ¥ to personer som jobber for at folk med interesse for spill skal ha en lettere mulighet for Ã¥ finne spill pÃ¥ tilbud.',
+            'info' : 'Vi har valgt og lagge dette grunnet egen interesse men vil dele vÃ¥res arbeid med folket',
             'year':datetime.now().year,
         }
     )
