@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }} - Game Sales</title>
@@ -8,6 +9,42 @@
     <link rel="stylesheet" type="text/css" href="{% static 'app/content/bootstrap.min.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'app/content/site.css' %}" />
     <script src="{% static 'app/scripts/modernizr-2.6.2.js' %}"></script>
+    <style>
+        .card {
+            border-radius: 10px;
+        }
+        .src {
+            class ="img-fluid";
+            alt="Responsive image";
+            style="max-width: 100%;";
+        }
+
+        .mt-0 {
+            margin-top: 0 !important;
+        }
+
+        .ml-1 {
+            margin-left: ($spacer * .25) !important;
+        }
+
+        .px-2 {
+            padding-left: ($spacer * .5) !important;
+            padding-right: ($spacer * .5) !important;
+        }
+
+        .p-3 {
+            padding: $spacer !important;
+        }
+        .p1 {
+            padding-left: 4em;
+        }
+        .p2 {
+            padding-left: 1em;
+        }
+        .pb {
+            padding-bottom: 1em;
+        }
+    </style>
 </head>
 
 <body>
@@ -19,13 +56,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <img class="navbar-brand" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAABBgAAAQYBzdMzvAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFaSURBVDiNzdK/b81RHMbx17lIOojGYJIYLB27SERFIioaRpNKmhCDhUSCxGi0Gk2GRgzsEvI9EtIapIs/wKQ2MV6Xmz6Ge29zpem3VSWe7Xx+vM/z+ZzD/66yVUEjhwuPIFyfVVbb6jttySpThSVMYrKwVGVqR8DXcgxvCx8mOPeNs+E9lhuZ+S1gI2dCxQtcnFG6F5TeFy7heeFlI+fbnK6ryuUqvSoPIxt2HCmN3K/yo5GrrbBGblbpN3Jnq4sbuVGlX+XuZs7mqvQamd/WKAPo/HCauVFsfYfhBJZnlafbBQ5rl4e9vwJ3S3vbkm/kUJ8HODIMfd7HrVPK1816Wh32WTD4fythBae/c23HDsOBwsdZ5R5UOY79bT27vsO/9ygdPoXpKq/G8kfxbuy8WliocnIsNt3hyQZgl8UJOhlARmrC49Fhjdt7uLLGwVGs8KzL4h8O9g/1E3a5eR8vuedHAAAAAElFTkSuQmCC" />
-                <a href="/" class="navbar-brand">Game Sales</a>
+                <a href="/" class="navbar-brand"><i class="fa-solid fa-house"></i> Game Sales</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="{% url 'about' %}">Om oss</a></li>
-                    <li><a href="{% url 'contact' %}">Kontakt oss</a></li>
+                    <li><a href="{% url 'about' %}"><i class="fa-regular fa-address-card"></i> Om oss</a></li>
+                    <li><a href="{% url 'contact' %}"><i class="fa-solid fa-phone"></i> Kontakt oss</a></li>
                 </ul>
                 <!--{% include 'app/loginpartial.html' %}-->
             </div>
