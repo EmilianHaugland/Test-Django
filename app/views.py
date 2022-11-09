@@ -14,7 +14,7 @@ class maillist:
     def __init__(self,first,last):
         self.first = first
         self.last = last
-        self.mail = 'Email' + ' ' + first + '.' + last + '@blizzwizz.net'
+        self.mail = first + '.' + last + '@blizzwizz.net'
 
     def get_name(self):
        self.first
@@ -48,7 +48,8 @@ def contact(request):
         {
              
                 
-             'arr' : arr,
+             'emilian' : mleh.mail,
+             'mari' : mlmk.mail,
              'title':'Personer',
              'message':'Kontaktpersoner',
              'mailMK' : 'marikallevik@gmail.com',
