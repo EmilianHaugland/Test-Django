@@ -2,9 +2,29 @@
 Definition of views.
 """
 
+
 from datetime import datetime
+import email
 from django.shortcuts import render
 from django.http import HttpRequest
+from array import *
+
+class maillist:
+
+    def __init__(self,first,last):
+        self.first = first
+        self.last = last
+        self.mail = 'Email' + ' ' + first + '.' + last + '@blizzwizz.net'
+
+    def get_name(self):
+       self.first
+       self.last
+
+mleh = maillist('emilian', 'haugland')
+mlmk = maillist('mari', 'kallevik')
+
+arr = [mleh.mail, mlmk.mail]
+
 
 def home(request):
     """Renders the home page."""
@@ -17,6 +37,7 @@ def home(request):
             'year':datetime.now().year,
         }
     )
+    
 
 def contact(request):
     """Renders the contact page."""
@@ -25,13 +46,16 @@ def contact(request):
         request,
         'app/contact.html',
         {
-            'title':'Personer',
-            'message':'Kontaktpersoner',
-            'mailMK' : 'marikallevik@gmail.com',
-            'mailEH' : 'emilian.haugland05@gmail.com',
-            'telEH' : '400 52 933',
-            'telMK' : '944 35 459', 
-            'year':datetime.now().year,
+             
+                
+             'arr' : arr,
+             'title':'Personer',
+             'message':'Kontaktpersoner',
+             'mailMK' : 'marikallevik@gmail.com',
+             'mailEH' : 'emilian.haugland05@gmail.com',
+             'telEH' : '400 52 933',
+             'telMK' : '944 35 459', 
+             'year':datetime.now().year,
         }
     )
 
