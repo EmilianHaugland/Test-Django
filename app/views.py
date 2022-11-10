@@ -9,21 +9,13 @@ from django.shortcuts import render
 from django.http import HttpRequest
 from array import *
 
-class maillist:
+class person:
 
-    def __init__(self,first,last):
-        self.first = first
-        self.last = last
-        self.mail = first + '.' + last + '@blizzwizz.net'
-
-    def get_name(self):
-       self.first
-       self.last
-
-mleh = maillist('emilian', 'haugland')
-mlmk = maillist('mari', 'kallevik')
-
-arr = [mleh.mail, mlmk.mail]
+    def __init__(self,firstname,lastname, mail):
+        self.firstname = firstname
+        self.lastname = lastname
+        self.mail = mail
+        self.fullname = self.lastname +', '+ self.firstname
 
 
 def home(request):
@@ -42,21 +34,19 @@ def home(request):
 def contact(request):
     """Renders the contact page."""
     assert isinstance(request, HttpRequest)
+    mleh = person('Emilian', 'Haugland', 'emilian.haugland@blizzwizz.net')
+    mlmk = person('Mari', 'Kallevik', 'test@gmail.com')
+    persons = [mleh, mlmk]
+
+
     return render(
         request,
         'app/contact.html',
         {
              
                 
-             'emilian' : mleh.mail,
-             'mari' : mlmk.mail,
-             'title':'Personer',
-             'message':'Kontaktpersoner',
-             'mailMK' : 'marikallevik@gmail.com',
-             'mailEH' : 'emilian.haugland05@gmail.com',
-             'telEH' : '400 52 933',
-             'telMK' : '944 35 459', 
-             'year':datetime.now().year,
+             'persons' : persons,
+             'title':'Personer'
         }
     )
 

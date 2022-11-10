@@ -8,36 +8,24 @@
 
 
 <div class="row">
+    {% for person in persons %}
     <div class="col-md-4">
         <div class="p1">
+
             <div class="card" style="width: 28rem; background-color: lightgrey;">
                 <div class="card-body">
                     <div class="p2">
-                        <h4 class="card-title">  <strong>Emilian Haugland</strong></h4>
-                        <p class="card-text"><strong>Telefon:</strong> {{telEH}}</p>
+                        <h4 class="card-title">  <strong>{{person.fullname}}</strong></h4>
+                        <p class="card-text"><strong>Telefon:</strong> {{person.phone}}</p>
                         <address>
-                            <strong>Mail:</strong> <a href="mailto:{{emilian}}">{{emilian}}</a>
+                            <strong>Mail:</strong> <a href="mailto:{{person.mail}}">{{person.mail}}</a>
                         </address>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-md-4">
-        <div class="p1">
-            <div class="card" style="width: 28rem; background-color: lightgrey;">
-                <div class="card-body">
-                    <div class="p2">
-                        <h4 class="card-title"> <strong>Mari Kallevik</strong></h4>
-                        <p class="card-text"><strong>Telefon:</strong> {{telMK}}</p>
-                        <address>
-                            <strong>Mail:</strong> <a href="mailto:{{mari}}">{{mari}}</a>
-                        </address>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    {% endfor %}
 </div>
 
 
