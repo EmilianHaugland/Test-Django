@@ -43,6 +43,9 @@
     <Compile Include="app\__init__.py" />
     <Compile Include="app\migrations\__init__.py" />
     <Compile Include="manage.py" />
+    <Compile Include="GamePrices.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Test_Django\__init__.py" />
     <Compile Include="Test_Django\settings.py" />
     <Compile Include="Test_Django\urls.py" />

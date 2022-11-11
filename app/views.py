@@ -4,10 +4,11 @@ Definition of views.
 
 
 from datetime import datetime
-import email
 from django.shortcuts import render
 from django.http import HttpRequest
 from array import *
+from GamePrices import *
+
 
 class person:
 
@@ -21,11 +22,15 @@ class person:
 def home(request):
     """Renders the home page."""
     assert isinstance(request, HttpRequest)
+    game_prices = GamePrices()
+    games=game_prices.get_games(.name)
     return render(
         request,
         'app/index.html',
         {
-            'title':'Home Page',
+            
+            'games' : games,
+            'title' : 'Home Page',
             'year':datetime.now().year,
         }
     )
