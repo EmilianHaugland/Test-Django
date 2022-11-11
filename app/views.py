@@ -10,6 +10,12 @@ from array import *
 from GamePrices import *
 
 
+
+
+
+
+      # Do struff
+
 class person:
 
     def __init__(self,firstname,lastname, mail):
@@ -19,11 +25,18 @@ class person:
         self.fullname = self.lastname +', '+ self.firstname
 
 
+
+
 def home(request):
     """Renders the home page."""
     assert isinstance(request, HttpRequest)
     game_prices = GamePrices()
-    games=game_prices.get_games(.name)
+    games=[]
+    gamename=request.POST.get("gamename",None)
+    if  gamename:
+        games=game_prices.get_games(gamename)
+
+
     return render(
         request,
         'app/index.html',

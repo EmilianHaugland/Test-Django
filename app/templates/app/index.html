@@ -7,43 +7,44 @@
 
     <div class="p1">
 
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Search For Games</h2>
-            <form id="form">
-                <input class="p2" style="border-radius: 20px;" type="search" id="{{game.name}}" name="search" placeholder="Search...">
-                <a style="width: 60px; height: 26px; border-radius: 20px;" class="btn btn-primary" onclick="">S&oslash;k </a>
-            </form>
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Search For Games</h2>
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    <label>Game Title: </label>
+                    <input name="gamename" class="form-control"><br />
+                    <input id="game2" value="Search &raquo;" type="submit" class="btn btn-primary">
+                </form>
+
+            </div>
+
         </div>
+        <br />
+        <br />
 
-    </div>
+        <div class="row">
+            {% for game in games %}
+            <div class="col-md-3">
+                <div class="card" style="width: 25rem; background-color: lightgrey; border-radius: 10px;">
+                    <div class="card-body">
+                        <br />
+                        <h2 style="text-align: center;" class="card-title">{{game.name}}</h2>
+                        <img src="{{game.img}}" class="img-fluid" alt="Responsive image" style="max-width: 100%;" />
+                        <div class="p2">
+                            <p>
+                                Pris &euro;{{game.price}}
+                            </p>
 
-
-    <br />
-    <br />
-
-    <div class="row">
-        {% for game in games %}
-        <div class="col-md-3">
-            <div class="card" style="width: 25rem; background-color: lightgrey; border-radius: 10px;">
-                <div class="card-body">
-                    <br />
-                    <h2 style="text-align: center;" class="card-title">{{game.name}}</h2>
-                    <img src="{{game.img}}" class="img-fluid" alt="Responsive image" style="max-width: 100%;" />
-                    <div class="p2">
-                        <p>
-                            Pris &euro;{{game.price}}
-                        </p>
-
-                        <p>
-                            <a class="btn btn-primary" href="{{game.url}}"> Kj&oslash;p n&aring; &raquo;</a>
-                        </p>
+                            <p>
+                                <a class="btn btn-primary" href="{{game.url}}"> Kj&oslash;p n&aring; &raquo;</a>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
-    </div>
     </div>
 </body>
       
